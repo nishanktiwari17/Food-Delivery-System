@@ -1,4 +1,4 @@
-package com.iamkhs.fooddelivery.service.impl;
+package com.osridhar.fooddelivery.service.impl;
 
 import com.cloudinary.Cloudinary;
 import com.fasterxml.jackson.databind.JsonNode;

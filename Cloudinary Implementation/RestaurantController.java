@@ -1,9 +1,9 @@
-package com.iamkhs.fooddelivery.controller;
+package com.osridhar.fooddelivery.controller;
 
-import com.iamkhs.fooddelivery.entity.Address;
-import com.iamkhs.fooddelivery.entity.Restaurant;
-import com.iamkhs.fooddelivery.service.CloudinaryImgService;
-import com.iamkhs.fooddelivery.service.RestaurantService;
+import com.osridhar.fooddelivery.entity.Address;
+import com.osridhar.fooddelivery.entity.Restaurant;
+import com.osridhar.fooddelivery.service.CloudinaryImgService;
+import com.osridhar.fooddelivery.service.RestaurantService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

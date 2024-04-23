@@ -1,4 +1,4 @@
-package com.iamkhs.fooddelivery.service;
+package com.osridhar.fooddelivery.service;
 
 import org.springframework.web.multipart.MultipartFile;
 

@@ -1,4 +1,4 @@
-package com.iamkhs.fooddelivery.configuration;
+package com.osridhar.fooddelivery.configuration;
 
 import com.cloudinary.Cloudinary;
 import org.springframework.beans.factory.annotation.Value;

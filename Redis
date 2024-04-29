@@ -1,0 +1,38 @@
+import redis
+import json
+
+# Connect to Redis
+r = redis.Redis(host='localhost', port=6379, db=0)
+
+# Function to place an order
+def place_order(user_id, food_item, quantity):
+    order_id = r.incr('order_id_counter')
+    order = {
+        'order_id': order_id,
+        'user_id': user_id,
+        'food_item': food_item,
+        'quantity': quantity,
+        'status': 'placed'
+    }
+    r.hmset(f'order:{order_id}', order)
+    r.lpush('user_orders:' + str(user_id), order_id)
+    return order_id
+
+# Function to get orders for a user
+def get_user_orders(user_id):
+    orders = []
+    order_ids = r.lrange('user_orders:' + str(user_id), 0, -1)
+    for order_id in order_ids:
+        order = r.hgetall(f'order:{order_id}')
+        orders.append(order)
+    return orders
+
+# Function to update order status
+def update_order_status(order_id, new_status):
+    r.hset(f'order:{order_id}', 'status', new_status)
+
+# Example 
+user_id = 123
+order_id = place_order(user_id, 'Pizza', 2)
+update_order_status(order_id, 'in progress')
+print("User's orders:", get_user_orders(user_id))

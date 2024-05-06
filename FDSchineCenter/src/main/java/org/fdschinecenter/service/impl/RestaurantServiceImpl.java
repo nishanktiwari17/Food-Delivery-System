@@ -26,9 +26,6 @@ import java.util.UUID;
 
 @Service
 @RequiredArgsConstructor
-/**
- * Class to manage RestaurantServiceImpl.
- */
 public class RestaurantServiceImpl implements RestaurantService {
 
     private final RestTemplate restTemplate;
@@ -39,9 +36,9 @@ public class RestaurantServiceImpl implements RestaurantService {
     // Save a restaurant
     @Override
     @CacheEvict(value = "allRestaurants", allEntries = true)
-    public void saveRestaurant(Restaurant restaurant) {
+    public void saveRestaurantData(Restaurant restaurant) {
 
-        Address address = restaurant.getAddress();
+        Address add = restaurant.getAddress();
 
        // Construct the full API URL
         String fullApiUrl = getFullApiUrl(address);

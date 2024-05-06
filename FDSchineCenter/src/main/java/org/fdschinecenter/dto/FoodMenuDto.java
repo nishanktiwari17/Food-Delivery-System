@@ -9,5 +9,7 @@ public record FoodMenuDto(int id,
                           String description,
                           double price,
                           String image,
+                          double rating,
+                          String comment,
                           RestaurantDto restaurant) implements Serializable {
 }

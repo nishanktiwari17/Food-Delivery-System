@@ -7,5 +7,7 @@ import java.io.Serializable;
  */
 public enum Role implements Serializable {
     ADMIN,
-    NORMAL
+    NORMAL,
+    USER,
+    DELIVERY
 }

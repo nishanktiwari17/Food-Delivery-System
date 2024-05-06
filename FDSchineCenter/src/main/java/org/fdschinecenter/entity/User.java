@@ -29,10 +29,6 @@ public class User implements Serializable {
     @NotEmptyNotBlank
     private String name;
 
-    @Email(message = "Please provide a valid email!")
-    @Column(unique = true)
-    private String email;
-
     @Size(min = 5, message = "Password must be contains minimum 5 characters")
     private String password;
 
@@ -45,6 +41,10 @@ public class User implements Serializable {
 
     @NotEmptyNotBlank
     private String address;
+
+    @Email(message = "Please provide a valid email!")
+    @NotEmptyNotBlank
+    private String email;
 
     private Role role;
 
